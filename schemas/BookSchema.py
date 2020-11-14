@@ -7,6 +7,7 @@ class BookSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Book
 
+    author = ma.String()
     title = ma.String(required=True, validate=Length(min=1))
     user =  ma.Nested(UserSchema)
     
